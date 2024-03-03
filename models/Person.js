@@ -20,6 +20,15 @@ const personSchema = new mongoose.Schema({
   mobileNumber: {
     type: String,
     required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
   },
   guardianNumber: {
     type: String,
@@ -61,6 +70,10 @@ const personSchema = new mongoose.Schema({
       required: true,
     },
   ],
+  mobileverification: {
+    type: Boolean,
+    required: true,
+  },
 });
 
 const Person = mongoose.model("Person", personSchema);
